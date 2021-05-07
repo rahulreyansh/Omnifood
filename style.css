@@ -7,13 +7,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
+
+html,
+body {
   background-color: #fff;
   color: #555;
   font-family: "Playfair Display", serif;
   font-weight: 300;
   font-size: 20px;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .clearfix {
   zoom: 1;
@@ -26,7 +30,7 @@ html {
   visibility: hidden;
 }
 .row {
-  width: 1040px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
@@ -44,16 +48,17 @@ header {
     url(images/hero.jpg);
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   height: 100vh;
 }
+
 /*---------------------------------------------------------------*/
 /*Heading Section*/
 /*---------------------------------------------------------------*/
 .hero-text-box {
   position: absolute;
-  width: 1040px;
+  width: 1140px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -104,14 +109,22 @@ h3 {
   float: left;
   margin-top: 20px;
 }
+.logo-black {
+  display: none;
+  height: 50px;
+  width: auto;
+  float: left;
+  margin: 5px 0;
+}
+
 .main-nav {
   float: right;
   list-style: none;
+  margin-top: 50px;
 }
 .main-nav li {
   display: inline-block;
   margin-left: 40px;
-  margin-top: 50px;
 }
 .main-nav li a:link,
 .main-nav li a:visited {
@@ -127,6 +140,38 @@ h3 {
 .main-nav li a:active {
   border-bottom: 2px solid #e67e22;
 }
+/* Sticky Nav*/
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 2px #efefef;
+  z-index: 9999;
+}
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+  padding: 15px 0;
+  color: #555;
+}
+.sticky .logo {
+  display: none;
+}
+.sticky .logo-black {
+  display: block;
+  align-items: center;
+}
+
+.sticky .mobile-nav-icon {
+  color: black;
+  font-size: 325%;
+  text-align: right;
+  margin-top: 5px;
+  display: block;
+  margin-bottom: -20px;
+}
+
 /*---------------------------------------------------------------*/
 /*Button Section*/
 /*---------------------------------------------------------------*/
@@ -223,13 +268,16 @@ button:hover {
 /*---------------------------------------------------------------*/
 /*How it works*/
 /*---------------------------------------------------------------*/
+
 .section-steps {
   background-color: #f4f4f4;
+}
+.steps-box {
+  margin-top: 30px;
 }
 .steps-box:first-child {
   text-align: right;
   padding-right: 3%;
-  margin-top: 30px;
 }
 .steps-box:last-child {
   padding-left: 3%;
@@ -238,26 +286,25 @@ button:hover {
 .img-mobile {
   width: 40%;
 }
+.work-steps {
+  margin-bottom: 50px;
+}
 
 .work-steps div {
-  float: left;
   color: #e67e22;
   border: 2px solid #e67e22;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
   border-radius: 50%;
+  height: 55px;
+  width: 55px;
   text-align: center;
+  padding: 5px;
+  float: left;
   font-size: 150%;
   margin-right: 25px;
 }
 .work-steps:last-of-type {
-  margin-bottom: 80px;
-}
-.work-steps p {
   margin-bottom: 50px;
 }
-
 .app-btn img {
   height: 50px;
   width: auto;
@@ -271,7 +318,9 @@ button:hover {
 
 .city-features {
   margin-bottom: 5px;
+  font-size: 90%;
 }
+/* We are in these cities - icons*/
 .icon {
   display: inline-block;
   width: 30px;
@@ -298,6 +347,7 @@ a:active {
   color: #555;
   border-bottom: 1px solid transparent;
 }
+
 /*---------------------------------------------------------------*/
 /*TESTIMONIALS*/
 /*---------------------------------------------------------------*/
@@ -337,13 +387,14 @@ cite img {
 }
 .section-plans {
   background-color: #f4f4f4;
+  width: 100%;
 }
 .section-plans ul {
   font-size: 80%;
 }
 .plan-box {
   background-color: white;
-  width: 80%;
+  width: 75%;
   border-radius: 5px;
   margin-left: 5%;
   box-shadow: 0 2px 2px #d8d8d8;
@@ -387,9 +438,13 @@ h3 {
 /*---------------------------------------------------------------*/
 /*CONTACT-FORM*/
 /*---------------------------------------------------------------*/
+.section-contact {
+  width: 100%;
+}
+
 .contact-form {
-  width: 60%;
-  margin: 0 auto;
+  width: 100%;
+  margin-left: 22%;
 }
 
 input[type="text"],
@@ -397,9 +452,9 @@ input[type="email"],
 select,
 textarea {
   width: 40%;
-  padding: 4px;
+  padding: 2px;
   border-radius: 3px;
-  border: 1px solid #ccc;
+  border: 1px solid #e67e22;
 }
 
 textarea {
@@ -407,7 +462,7 @@ textarea {
 }
 footer {
   background-color: black;
-  height: 150px;
+  height: 100px;
 }
 .footer-nav {
   list-style: none;
@@ -441,3 +496,18 @@ footer {
   color: #fff;
   border-bottom: 1px solid #e67e22;
 }
+
+/*Animations*/
+.js--wp-1 {
+  opacity: 0;
+}
+
+.mobile-nav-icon {
+  font-size: 325%;
+  margin-top: 25px;
+  float: right;
+  display: none;
+  color: white;
+  cursor: pointer;
+}
+
