@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="grid.css.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <title>Omnifood</title>
   </head>
@@ -20,21 +28,25 @@
       <nav>
         <div class="row">
           <img src="images/logo-white.png" alt="Omnifood Logo" class="logo" />
-          <ul class="main-nav">
-            <li><a href="#">Food Delivery</a></li>
-            <li><a href="#">How It Works</a></li>
-            <li><a href="#">Our Cities</a></li>
-            <li><a href="#">Sign Up</a></li>
+          <img src="images/logo.png" alt="Omnifood Logo" class="logo-black" />
+          <ul class="main-nav js--main-nav">
+            <li><a href="#features">Food Delivery</a></li>
+            <li><a href="#working">How It Works</a></li>
+            <li><a href="#cities">Our Cities</a></li>
+            <li><a href="#js--scroll-to-plans">Sign Up</a></li>
           </ul>
+          <a class="mobile-nav-icon js--nav-bar"
+            ><ion-icon name="menu-outline"></ion-icon>
+          </a>
         </div>
       </nav>
       <div class="hero-text-box">
         <h1>Goodbye junk food. <br />Hello super healthy meals.</h1>
-        <a href="#" class="btn btn-full">I'm Hungry</a>
-        <a href="#" class="btn btn-ghost">Show Me More</a>
+        <a href="#js--scroll-to-plans" class="btn btn-full">I'm Hungry</a>
+        <a href="#features" class="btn btn-ghost">Show Me More</a>
       </div>
     </header>
-    <section class="features">
+    <section class="features jss--section-features" id="features">
       <div class="row">
         <h2>Get food fast &mdash; not fast food.</h2>
         <p class="long-copy">
@@ -43,7 +55,7 @@
           we’re really good at it, we promise!
         </p>
       </div>
-      <div class="row">
+      <div class="row js--wp-1">
         <div class="col span-1-of-4 box">
           <ion-icon name="infinite-outline" class="icon-big"></ion-icon>
           <h3>Up to 365 days/year</h3>
@@ -143,7 +155,7 @@
         </li>
       </ul>
     </section>
-    <section class="section-steps">
+    <section class="section-steps" id="working">
       <div class="row">
         <h2>How it works &mdash; Simple as 1, 2, 3</h2>
       </div>
@@ -162,11 +174,15 @@
               Choose the subscription plan that best fits your needs and sign up
               today.
             </p>
+          </div>
+          <div class="work-steps">
             <div>2</div>
             <p>
               Order your delicious meal using our mobile app or website. Or you
               can even call us!
             </p>
+          </div>
+          <div class="work-steps">
             <div>3</div>
             <p>
               Enjoy your meal after less than 20 minutes. See you the next time!
@@ -181,11 +197,11 @@
         </div>
       </div>
     </section>
-    <section class="section-cities">
+    <section class="section-cities" id="cities">
       <div class="row">
         <h2>We're currently in these cities</h2>
       </div>
-      <div class="row">
+      <div class="row js--wp-1">
         <div class="col span-1-of-4 box">
           <img src="images/lisbon-3.jpg" class="images" />
           <h3>LISBON</h3>
@@ -285,14 +301,14 @@
         </div>
       </div>
     </section>
-    <section class="section-plans">
+    <section class="section-plans" id="js--scroll-to-plans">
       <div class="row">
         <h2>Start eating healthy today</h2>
       </div>
       <div class="row">
         <div class="col span-1-of-3">
           <div class="plan-box">
-            <div>
+            <div class="plan1">
               <h3>Premium</h3>
               <p class="plan-price">399$ <span>/ month</span></p>
               <p class="plan-price-meal">That’s only 13.30$ per meal</p>
@@ -409,34 +425,33 @@
                 <option value="newspaper">newspaper</option>
               </select>
             </div>
-            <div class="row">
-              <div class="col span-1-of-3">
-                <label for="newsletter">Newsletter?</label>
-              </div>
-              <div class="col span-2-of-3">
-                <input type="checkbox" id="checkbox" checked />
-                <label for="checkbox" id="yp">Yes, please</label>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="newsletter" class="newsLetter">Newsletter?</label>
             </div>
-            <div class="row">
-              <div class="col span-1-of-3">
-                <label for="line">Drop us a line</label>
-              </div>
-              <div class="col span-2-of-3">
-                <textarea
-                  name="textarea"
-                  id="txtarea1"
-                  placeholder="Message"
-                ></textarea>
-              </div>
+            <div class="col span-2-of-3">
+              <input type="checkbox" class="checkbox" checked />
             </div>
-            <div class="row">
-              <div class="col span-1-of-3">
-                <label>&nbsp;</label>
-              </div>
-              <div class="col span-2-of-3">
-                <button type="submit">Submit</button>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="line" class="dropaLine">Drop us a line</label>
+            </div>
+            <div class="col span-2-of-3">
+              <textarea
+                name="textarea"
+                class="txtarea1"
+                placeholder="Message"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label>&nbsp;</label>
+            </div>
+            <div class="col span-2-of-3">
+              <button type="submit">Submit</button>
             </div>
           </div>
         </form>
@@ -472,4 +487,9 @@
       </div>
     </footer>
   </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="jquery.waypoints.min.js"></script>
+  <script src="script.js"></script>
 </html>
+
